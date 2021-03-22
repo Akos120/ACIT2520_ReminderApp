@@ -11,6 +11,7 @@ Shaniah:
 1. Created trello board
 
 Benny:
+
 1.Add passport local strategy
 2.Add logout button on reminder page
 3.Add intercept check for all other functions
