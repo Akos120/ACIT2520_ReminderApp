@@ -7,10 +7,12 @@ Agnes:
 4. Watched videos on how to use git, gitignore, and git with vscode
 
 Steven:
-1. Edited trello
+1. Edited 
+2. Add update functionality
 
 Shaniah:
 1. Created trello board
+2. Add delete functionality
 
 Benny:
 1. Created discord server to share information and resources
@@ -20,5 +22,5 @@ Benny:
 5. Mock a fake database for user account
 
 Also find how to work on git and git on vs 
-1.https://www.youtube.com/watch?v=3Tn58KQvWtU 
-2.https://www.youtube.com/watch?v=F2DBSH2VoHQ
+1. https://www.youtube.com/watch?v=3Tn58KQvWtU 
+2. https://www.youtube.com/watch?v=F2DBSH2VoHQ
