@@ -11,4 +11,4 @@ Shaniah:
 1. Created trello board
 
 Benny:
-1. Created discord server to share information and resources
+
