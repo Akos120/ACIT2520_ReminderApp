@@ -9,6 +9,8 @@ Agnes:
 Steven:
 1. Edited 
 2. Add update functionality
+3. Watched lecture videos
+4. Watched tutorials on how to use git and git with vscode
 
 Shaniah:
 1. Created trello board
