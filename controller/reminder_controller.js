@@ -45,8 +45,9 @@ let remindersController = {
   },
 
   update: (req, res) => {
+    let name = req.user.name;
     let reminderToFind = req.params.id;
-      database.cindy.reminders.forEach(function (reminder) {
+      database[name].reminders.forEach(function (reminder) {
         if (reminder.id == reminderToFind) {
           reminder.title = req.body.title
           reminder.description = req.body.description
