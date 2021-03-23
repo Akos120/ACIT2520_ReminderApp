@@ -45,11 +45,32 @@ let remindersController = {
   },
 
   update: (req, res) => {
-    // implement this code
+    let name = req.user.name;
+    let reminderToFind = req.params.id;
+      database[name].reminders.forEach(function (reminder) {
+        if (reminder.id == reminderToFind) {
+          reminder.title = req.body.title
+          reminder.description = req.body.description
+          if (req.body.completed == "true") {
+            reminder.completed = true
+          } else if (req.body.completed == "false") {
+            reminder.completed = false
+          };
+        };
+        res.redirect("/reminder/" + reminderToFind)
+      });
   },
 
   delete: (req, res) => {
-    // Implement this code
+    let reminderToFind = req.params.id;
+    let searchResult = database.cindy.reminders.find(function (reminder) {
+      return reminder.id == reminderToFind;
+      });
+      
+      if(searchResult !== -1){
+        database.cindy.reminders.splice(searchResult, 1);
+      }
+    res.redirect("/reminders");
   },
 };
 
