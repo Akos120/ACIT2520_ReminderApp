@@ -2,15 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
-const session = require("express-session");
 const reminderController = require("./controller/reminder_controller");
 const authController = require("./controller/auth_controller");
 const passport = require("./middleware/passport");
 const { ensureAuthenticated, forwardAuthenticated } = require("./middleware/checkAuth");
 
-app.use(express.static(path.join(__dirname, "public")));
-
-app.use(express.urlencoded({ extended: false }));
 app.use(
   session({
     secret: "secret",
