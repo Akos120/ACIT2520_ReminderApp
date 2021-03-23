@@ -15,6 +15,8 @@ Steven:
 Shaniah:
 1. Created trello board
 2. Add delete functionality
+3. Watched lecture videos
+4. Read articles to figure out how to use git as a team
 
 Benny:
 1. Created discord server to share information and resources
