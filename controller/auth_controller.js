@@ -23,5 +23,4 @@ let authController = {
   },
 };
 
-
 module.exports = authController;
