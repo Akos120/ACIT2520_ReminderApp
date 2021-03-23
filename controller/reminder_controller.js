@@ -63,12 +63,13 @@ let remindersController = {
 
   delete: (req, res) => {
     let reminderToFind = req.params.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
+    let name = req.user.name;
+    let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
       });
       
       if(searchResult !== -1){
-        database.cindy.reminders.splice(searchResult, 1);
+        database[name].reminders.splice(searchResult, 1);
       }
     res.redirect("/reminders");
   },
