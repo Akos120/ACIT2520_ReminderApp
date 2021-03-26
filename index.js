@@ -10,7 +10,7 @@ const { ensureAuthenticated, forwardAuthenticated } = require("./middleware/chec
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: "secret",
@@ -83,3 +83,4 @@ app.listen(3001, function () {
     "Server running. Visit: localhost:3001/reminders in your browser 🚀"
   );
 });
+ 

@@ -33,7 +33,7 @@ let remindersController = {
     };
     database[name].reminders.push(reminder);
     res.redirect("/reminders");
-  },
+  }, 
 
   edit: (req, res) => {
     let reminderToFind = req.params.id;
@@ -47,18 +47,24 @@ let remindersController = {
   update: (req, res) => {
     let name = req.user.name;
     let reminderToFind = req.params.id;
-      database[name].reminders.forEach(function (reminder) {
-        if (reminder.id == reminderToFind) {
-          reminder.title = req.body.title
-          reminder.description = req.body.description
-          if (req.body.completed == "true") {
-            reminder.completed = true
-          } else if (req.body.completed == "false") {
-            reminder.completed = false
-          };
-        };
-        res.redirect("/reminder/" + reminderToFind)
-      });
+    let searchResult = database[name].reminders.find(function (reminder) {
+      return reminder.id == reminderToFind;
+    });
+    let num = database[name].reminders.indexOf(searchResult)
+    
+    searchResult.title = req.body.title
+    searchResult.description = req.body.description
+
+    if (req.body.completed == "true") {
+      searchResult.completed = true
+    } else if (req.body.completed == "false") {
+      searchResult.completed = false
+    };
+
+    database[name].reminders[num]=searchResult
+    
+
+    res.redirect("/reminder/" + reminderToFind)
   },
 
   delete: (req, res) => {
@@ -67,9 +73,10 @@ let remindersController = {
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
       });
-      
+
       if(searchResult !== -1){
-        database[name].reminders.splice(searchResult, 1);
+        let result = database[name].reminders.filter(elem => elem !== searchResult)
+        database[name].reminders=result
       }
     res.redirect("/reminders");
   },
