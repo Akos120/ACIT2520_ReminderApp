@@ -2,7 +2,6 @@ const express = require("express");
 const session = require("express-session");
 const app = express();
 const path = require("path");
-const session = require("express-session");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
 const authController = require("./controller/auth_controller");
@@ -11,11 +10,7 @@ const { ensureAuthenticated, forwardAuthenticated } = require("./middleware/chec
 
 app.use(express.static(path.join(__dirname, "public")));
 
-<<<<<<< HEAD
-app.use(express.urlencoded({ extended: false }));
-=======
 app.use(express.urlencoded({ extended: true }));
->>>>>>> b1e2aa52f23d3a62897318d05381bf5cd266d2cf
 app.use(
   session({
     secret: "secret",

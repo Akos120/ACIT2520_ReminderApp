@@ -21,12 +21,8 @@
     "express-session": "^1.17.1",
     "method-override": "^2.3.7",
     "mongoose": "^4.7.7",
-<<<<<<< HEAD
     "negotiator": "^0.6.2",
     "nodemon": "^1.19.4",
-=======
-    "nodemon": "^1.11.0",
->>>>>>> b1e2aa52f23d3a62897318d05381bf5cd266d2cf
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "raw-body": "^2.4.1"
