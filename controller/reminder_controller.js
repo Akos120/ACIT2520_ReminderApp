@@ -2,7 +2,7 @@ let database = require("../database").Database;
 
 let remindersController = {
   list: (req, res) => {
-    let name =req.user.name //Benny 
+    let name =req.user.name 
     res.render("reminder/index", { reminders: database[name].reminders });
   },
 
@@ -12,7 +12,7 @@ let remindersController = {
 
   listOne: (req, res) => {
     let reminderToFind = req.params.id;
-    let name =req.user.name; //Benny 
+    let name =req.user.name; 
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
@@ -24,7 +24,7 @@ let remindersController = {
   },
 
   create: (req, res) => {
-    let name =req.user.name //Benny 
+    let name =req.user.name 
     let reminder = {
       id: database[name].reminders.length + 1,
       title: req.body.title,
@@ -46,7 +46,7 @@ let remindersController = {
 
   update: (req, res) => {
     let name = req.user.name;
-    let reminderToFind = req.params.id;
+    let reminderToFind = req.user.id;
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
@@ -82,4 +82,7 @@ let remindersController = {
   },
 };
 
-module.exports = remindersController;
+
+
+module.exports = remindersController
+
