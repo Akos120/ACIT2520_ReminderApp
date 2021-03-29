@@ -8,6 +8,7 @@ const friendcontroller = require("./controller/friend_controller");
 const authController = require("./controller/auth_controller");
 const passport = require("./middleware/passport");
 const { ensureAuthenticated, forwardAuthenticated } = require("./middleware/checkAuth");
+const { friendData } = require("./controller/friend_controller");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -73,6 +74,9 @@ app.post("/reminder/delete/:id", reminderController.delete);
 
 app.post("/friend", friendcontroller.add);
 
+// To see friend's reminders in detail
+app.get("/friend/:name/:id", friendcontroller.friendRemind)
+
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
 
 app.get("/register", authController.register);
@@ -83,7 +87,6 @@ app.get("/logout", (req,res)=>{
   req.logout();
   res.redirect("/login")
 })
-
 
 app.listen(3001, function () {
   console.log(
