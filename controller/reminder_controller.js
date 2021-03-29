@@ -52,8 +52,6 @@ let remindersController = {
       return reminder.id == reminderToFind;
     });
     let num = database[name].reminders.indexOf(searchResult)
-    console.log("The num is: ", num)
-    console.log("The searchResult is: ", searchResult)
     searchResult.title = req.body.title
     searchResult.description = req.body.description
     searchResult.date = req.body.date
