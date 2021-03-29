@@ -12,8 +12,13 @@
         <% } else if (reminderItem.completed == false) { %>
           <span class="badge badge-danger">False</span>
         <% } %>
-        <!-- <a class="pull-right" href=<%= "/reminder/" + reminderItem.id %>>View</a> -->
-        <!-- A new view button here but no delete and edit function  -->
+
+        || Remind By:
+        <%= reminderItem.date.replace("T", " ") %>
+        
+
+        
+        <a class="pull-right" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
       </li>
     <% }) %>
   </ul>

@@ -1,4 +1,5 @@
 let database = require("../database").Database;
+let account = require("../database").Account;
 
 let remindersController = {
   list: (req, res) => {
@@ -31,6 +32,7 @@ let remindersController = {
       description: req.body.description,
       tag: req.body.tag,
       completed: false,
+      date: req.body.date
     };
     database[name].reminders.push(reminder);
     res.redirect("/reminders");
@@ -47,15 +49,18 @@ let remindersController = {
 
   update: (req, res) => {
     let name = req.user.name;
-    let reminderToFind = req.user.id;
+    let reminderToFind = req.params.id;
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     let num = database[name].reminders.indexOf(searchResult)
-    
     searchResult.title = req.body.title
     searchResult.description = req.body.description
+
+    searchResult.date = req.body.date
+
     searchResult.tag = req.body.tag
+
 
     if (req.body.completed == "true") {
       searchResult.completed = true
