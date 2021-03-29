@@ -6,7 +6,6 @@ let checkfriend=(searched,current)=>{
         return user.id == searched.id;
         });
     return result
-
 }
 
 
@@ -53,7 +52,7 @@ let friendcontroller={
             searchuser.friends.push({id: currentuser.id,name: currentuser.name,email: currentuser.email})
             res.render("Social/friend", {account:currentuser.friends,
                                          error:0})
-        }    
+        }
     },
 
     View:(req,res)=>{
@@ -64,6 +63,18 @@ let friendcontroller={
                                                 friendname:name});
     },
 
+    friendRemind: (req, res) => {
+        let reminderToFind = req.params.id;
+        let name =req.params.name; 
+        let searchResult = database[name].reminders.find(function (reminder) {
+          return reminder.id == reminderToFind;
+        });
+        if (searchResult != undefined) {
+          res.render("Social/single_friend_reminder", { reminderItem: searchResult });
+        } else {
+          res.render("Social/friend_reminders", { reminders: database[name].reminders });
+        }
+      },
 };
 
 

@@ -1,4 +1,5 @@
 let database = require("../database").Database;
+let account = require("../database").Account;
 
 let remindersController = {
   list: (req, res) => {
