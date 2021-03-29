@@ -47,11 +47,13 @@ let remindersController = {
 
   update: (req, res) => {
     let name = req.user.name;
-    let reminderToFind = req.user.id;
+    let reminderToFind = req.params.id;
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     let num = database[name].reminders.indexOf(searchResult)
+    console.log("The num is: ", num)
+    console.log("The searchResult is: ", searchResult)
     searchResult.title = req.body.title
     searchResult.description = req.body.description
     searchResult.date = req.body.date
