@@ -1,6 +1,6 @@
 let Database = {
     cindy: {
-        reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
+        reminders: [{id: 1, title: "abc", description: "abcabc", tag: "test", completed: false}]
     },
     alex: {
         reminders: [{id: 2, title: "alex", description: "784516", completed: false}]

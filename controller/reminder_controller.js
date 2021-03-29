@@ -29,6 +29,7 @@ let remindersController = {
       id: database[name].reminders.length + 1,
       title: req.body.title,
       description: req.body.description,
+      tag: req.body.tag,
       completed: false,
     };
     database[name].reminders.push(reminder);
@@ -54,6 +55,7 @@ let remindersController = {
     
     searchResult.title = req.body.title
     searchResult.description = req.body.description
+    searchResult.tag = req.body.tag
 
     if (req.body.completed == "true") {
       searchResult.completed = true
