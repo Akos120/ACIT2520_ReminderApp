@@ -30,6 +30,7 @@ let remindersController = {
       title: req.body.title,
       description: req.body.description,
       completed: false,
+      date: req.body.date
     };
     database[name].reminders.push(reminder);
     res.redirect("/reminders");
@@ -51,9 +52,9 @@ let remindersController = {
       return reminder.id == reminderToFind;
     });
     let num = database[name].reminders.indexOf(searchResult)
-    
     searchResult.title = req.body.title
     searchResult.description = req.body.description
+    searchResult.date = req.body.date
 
     if (req.body.completed == "true") {
       searchResult.completed = true

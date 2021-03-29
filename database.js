@@ -1,12 +1,12 @@
 let Database = {
     cindy: {
-        reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
+        reminders: [{id: 1, title: "abc", description: "abcabc", completed: false, date: "2021-03-17T19:01"}]
     },
     alex: {
-        reminders: [{id: 2, title: "alex", description: "784516", completed: false}]
+        reminders: [{id: 2, title: "alex", description: "784516", completed: false, date: "2022-04-17T12:01"}]
     },
     jax: {
-        reminders: [{id: 3, title: "jax", description: "newnewnew", completed: false}]
+        reminders: [{id: 3, title: "jax", description: "newnewnew", completed: false, date: "2021-03-17T13:51"}]
     } 
 }
 

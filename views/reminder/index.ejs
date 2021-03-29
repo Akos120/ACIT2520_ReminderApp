@@ -12,6 +12,8 @@
       <% } else if (reminderItem.completed == false) { %>
         <span class="badge badge-danger">False</span>
       <% } %>
+      || Remind Me:
+      <%= reminderItem.date.replace("T", " ") %>
       <a class="pull-right" href=<%= "/reminder/" + reminderItem.id %>>View</a>
     </li>
   <% }) %>
