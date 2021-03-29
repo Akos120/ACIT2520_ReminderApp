@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="page-header"><%=friendname%>'s Reminders</h1>
+  
+  <ul class="list-group">
+    <% reminders.forEach(function (reminderItem) { %>
+      <li class="list-group-item">
+        <strong><%= reminderItem.title %>: </strong>
+        <%= reminderItem.description %>
+        || Completed:
+        <% if (reminderItem.completed == true) { %>
+          <span class="badge badge-success">True</span>
+        <% } else if (reminderItem.completed == false) { %>
+          <span class="badge badge-danger">False</span>
+        <% } %>
+        <!-- <a class="pull-right" href=<%= "/reminder/" + reminderItem.id %>>View</a> -->
+        <!-- A new view button here but no delete and edit function  -->
+      </li>
+    <% }) %>
+  </ul>
+  <!-- <a href="/logout" class="btn btn-secondary">Logout</a> -->
+  <!-- You should add copy buttion here -->
+  <!-- You may also need to stop user copy twice and give them error message -->
+  </div>

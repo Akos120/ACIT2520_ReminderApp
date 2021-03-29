@@ -1,9 +1,12 @@
 let Database = {
     cindy: {
-        reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
+        reminders: [{id: 1, title: "abc", description: "abcabc", tag: "test", completed: false}]
     },
     alex: {
         reminders: [{id: 2, title: "alex", description: "784516", completed: false}]
+    },
+    jax: {
+        reminders: [{id: 3, title: "jax", description: "newnewnew", completed: false}]
     } 
 }
 
@@ -13,12 +16,23 @@ let Account=[
         name: "cindy",
         email: "cindy123@gmail.com",
         password: "cindy123!",
+        friends:[],
       },
+      
       {
         id: 2,
         name: "alex",
         email: "alex123@gmail.com",
         password: "alex123!",
+        friends:[],
+      },
+
+      {
+        id: 3,
+        name: "jax",
+        email: "jax123@gmail.com",
+        password: "jax123!",
+        friends:[],
       },
 ]
 
