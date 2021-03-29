@@ -6,6 +6,7 @@
     <li class="list-group-item">
       <strong><%= reminderItem.title %>: </strong>
       <%= reminderItem.description %>
+      || <i><%= reminderItem.tag %></i>
       || Completed:
       <% if (reminderItem.completed == true) { %>
         <span class="badge badge-success">True</span>
@@ -18,5 +19,8 @@
     </li>
   <% }) %>
 </ul>
+
+<!-- <h1 class="frend-header">Friend's Reminders</h1> -->
+
 <a href="/logout" class="btn btn-secondary">Logout</a>
 </div>
