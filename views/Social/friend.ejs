@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="page-header">Friends</h1>
+    <form action="/friend" method="POST">
+        <div class="card my-2">
+        <div class="card-body">
+            <% if (error == 1) { %> 
+                <script>alert('The email not exist');</script>
+            <%}else if (error == 2) { %> 
+                <script>alert('You cannot add yourself');</script>
+            <%}else if (error == 3) { %> 
+                <script>alert('You cannot repeatly add one account');</script>
+            <% } %>
+            <input type="text" name="useremail" class="form-control" id="userInput" placeholder="Type email">
+            <button type="submit" class="btn btn-primary  my-2">
+                Add friend
+            </button>
+            <h5 class="card-title">Your friends</h5>
+            
+            <ul class="list-group">
+
+                <% for (let i = 0; i < account.length;  i++ ) { %>
+                    <li class="list-group-item">Name:&nbsp;&nbsp;<%=account[i].name%>&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;<%=account[i].email%>
+                    <!-- add a status here for user know the reminders is coied or not -->
+                    <a class="pull-right" href=<%= "/friend/" + account[i].name %>>View</a>
+                    </li>
+                    
+                <% } %>
+            </ul>   
+          </div>
+        </div>
+        
+
+    </form>
+    <a href="/logout" class="btn btn-secondary">Logout</a>
+</div>
