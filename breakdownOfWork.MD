@@ -1,4 +1,4 @@
-Sprint 1 (Complete - March 22, 2021)
+##Sprint 1 (Complete - March 22, 2021)
 
 Agnes:
 1. Created github repository
@@ -28,3 +28,16 @@ Benny:
 Also find how to work on git and git on vs 
 1. https://www.youtube.com/watch?v=3Tn58KQvWtU 
 2. https://www.youtube.com/watch?v=F2DBSH2VoHQ
+
+
+##Sprint 2 (Complete - March 29, 2021)
+
+
+Benny:
+1. Fixed the bugs in the update function now update can use in multiple reminders.
+2. Fixed the bugs in the delete function now delete will not delete the wrong reminders.
+3. Add the friends function now user can add friends by type their emails.
+   The friends can also add the user automatically.
+5. Add view friends' reminders functions now user can view their friends reminders.
+
+
