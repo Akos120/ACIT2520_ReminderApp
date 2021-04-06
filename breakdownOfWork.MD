@@ -34,3 +34,10 @@ Sprint 2 (Complete - March 29, 2021)
 Agnes:
 1. Added ability to view friend's reminders in detail
 2. Rewatched some lecture videos
+
+
+Sprint 3 (April 6, 2021)
+Agnes:
+1. Worked to allow adding of friend's reminders to your list
+2. Looked up various array methods (includes(), indexOf(), find())
+3. Looked up how to assign a single method to a button in ejs and node
