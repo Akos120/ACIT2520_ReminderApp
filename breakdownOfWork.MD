@@ -1,4 +1,4 @@
-Sprint 1 (Complete - March 22, 2021)
+##Sprint 1 (Complete - March 22, 2021)
 
 Agnes:
 1. Created github repository
@@ -35,9 +35,17 @@ Agnes:
 1. Added ability to view friend's reminders in detail
 2. Rewatched some lecture videos
 
+Benny:
+1. Fixed the bugs in the update function now update can use in multiple reminders.
+2. Fixed the bugs in the delete function now delete will not delete the wrong reminders.
+3. Add the friends function now user can add friends by type their emails.
+   The friends can also add the user automatically.
+5. Add view friends' reminders functions now user can view their friends reminders.
+
 
 Sprint 3 (April 6, 2021)
 Agnes:
 1. Worked to allow adding of friend's reminders to your list
 2. Looked up various array methods (includes(), indexOf(), find())
 3. Looked up how to assign a single method to a button in ejs and node
+##Sprint 2 (Complete - March 29, 2021)
