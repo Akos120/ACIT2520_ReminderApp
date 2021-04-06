@@ -70,7 +70,6 @@ let remindersController = {
 
     database[name].reminders[num]=searchResult
     
-
     res.redirect("/reminder/" + reminderToFind)
   },
 
