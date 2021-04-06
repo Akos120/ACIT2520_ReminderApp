@@ -30,7 +30,7 @@ Also find how to work on git and git on vs
 2. https://www.youtube.com/watch?v=F2DBSH2VoHQ
 
 
-Sprint 2 (Complete - march 29, 2021)
+Sprint 2 (Complete - March 29, 2021)
 Agnes:
 1. Added ability to view friend's reminders in detail
 2. Rewatched some lecture videos

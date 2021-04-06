@@ -4,7 +4,7 @@ let account = require("../database").Account;
 let remindersController = {
   list: (req, res) => {
     let name =req.user.name 
-    res.render("reminder/index", { reminders: database[name].reminders });
+    res.render("reminder/index", { reminders: database[name].reminders, friendReminders: database[name].friendReminders });
   },
 
   new: (req, res) => {

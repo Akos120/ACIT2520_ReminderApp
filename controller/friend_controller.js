@@ -57,10 +57,26 @@ let friendcontroller={
 
     View:(req,res)=>{
         // get the friend name from url
-        let name =req.params.name 
+        let name = req.params.name 
+
+        // adding their reminders to your list
+        let user = req.user.name
+        let addReminder = () => {
+            console.log('this is database[user].reminders', database[user].reminders)
+            database[name].reminders.forEach(reminder => {
+            if (reminder.id in database[user].friendReminders) {
+                return
+            } else {
+                console.log('reminder', reminder)
+                console.log(database[user].friendReminders)
+                reminder.name = name
+                database[user].friendReminders.push(reminder)
+            }});
+        }
         // send the friend reminders and name to the ejs
         res.render("Social/friend_reminders", { reminders: database[name].reminders,
-                                                friendname:name});
+                                                friendname:name,
+                                                addReminder: addReminder()});
     },
 
     friendRemind: (req, res) => {

@@ -19,7 +19,27 @@
     </li>
   <% }) %>
 </ul>
-
+<br>
+<br>
+<h1>Friend's Reminders</h1>
+<ul class="list-group">
+  <% friendReminders.forEach(function (reminderItem) { %>
+    <li class="list-group-item">
+      <strong><%= reminderItem.title %>: </strong>
+      <%= reminderItem.description %>
+      || <i><%= reminderItem.tag %></i>
+      || Completed:
+      <% if (reminderItem.completed == true) { %>
+        <span class="badge badge-success">True</span>
+      <% } else if (reminderItem.completed == false) { %>
+        <span class="badge badge-danger">False</span>
+      <% } %>
+      || Remind Me:
+      <%= reminderItem.date.replace("T", " ") %>
+      <a class="pull-right" href=<%= "/friend/" + reminderItem.name + "/" + reminderItem.id %>>View</a>
+    </li>
+  <% }) %>
+</ul>
 <!-- <h1 class="frend-header">Friend's Reminders</h1> -->
 
 <a href="/logout" class="btn btn-secondary">Logout</a>
