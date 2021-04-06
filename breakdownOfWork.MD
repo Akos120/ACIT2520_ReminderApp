@@ -31,13 +31,16 @@ Also find how to work on git and git on vs
 
 
 ##Sprint 2 (Complete - March 29, 2021)
-
+Steven:
+1. Researched how to use datetime-local
+2. Added dates and times to all functions
+3. Fixed small bug in update function where it only update the first reminder
 
 Benny:
 1. Fixed the bugs in the update function now update can use in multiple reminders.
 2. Fixed the bugs in the delete function now delete will not delete the wrong reminders.
 3. Add the friends function now user can add friends by type their emails.
-   The friends can also add the user automatically.
+4. The friends can also add the user automatically.
 5. Add view friends' reminders functions now user can view their friends reminders.
 
 
