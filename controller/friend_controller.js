@@ -18,7 +18,9 @@ let friendcontroller={
             return user.id == user_id;
             });
         res.render("Social/friend", {account:currentuser.friends,
-                                     error:0})
+                                     error:0,
+                                     alluser:account,
+                                     listener:"filter()"})
 
     },
 
@@ -40,18 +42,26 @@ let friendcontroller={
         //If no error add friend to current friends list and add current user the added user friends list
         if(searchuser == undefined){
             res.render("Social/friend", {account:currentuser.friends,
-                                         error:1});
+                                         error:1,
+                                         alluser:account,
+                                         listener:"filter()"});
         }else if(searchuser.id == currentuser.id){
             res.render("Social/friend", {account:currentuser.friends,
-                                         error:2});
+                                         error:2,
+                                         alluser:account,
+                                         listener:"filter()"});
         }else if(checkfriend(searchuser,currentuser) != undefined){
             res.render("Social/friend", {account:currentuser.friends,
-                                         error:3});
+                                         error:3,
+                                         alluser:account,
+                                         listener:"filter()"});
         }else{
             currentuser.friends.push({id:searchuser.id,name:searchuser.name,email:searchuser.email})
             searchuser.friends.push({id: currentuser.id,name: currentuser.name,email: currentuser.email})
             res.render("Social/friend", {account:currentuser.friends,
-                                         error:0})
+                                         error:0,
+                                         alluser:account,
+                                         listener:"filter()"})
         }
     },
 
