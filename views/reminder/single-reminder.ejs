@@ -24,4 +24,25 @@
       </li>
     </ul>
 
+        <div class="card my-2">
+      <div class="card-body">
+        <h3><strong>Subtask</strong></h3>
+        <form class="deleteForm "method="POST" action=<%= "/reminder/" + reminderItem.id + "/editsub" %>>
+          <ul>
+          <% for (let i = 0; i < reminderItem.subtask.length;  i++ ) { %>
+            <li class="list-group-item"><strong><%=reminderItem.subtask[i]%></strong>
+            <button type="submit" class="btn btn-danger" name="buttonsub" value=<%= i %>>Delete</button>
+            </li>
+          <% } %>
+          </ul>
+          <% if (Show == true) { %>
+          <button type="submit" class="btn btn-primary  my-2" name="buttonsub" value="add">add</button>
+          <% } else {%>
+            <input type="text" class="form-control" id="titleInput" placeholder="Type your subtask" name="subtask">
+            <button type="submit" class="btn btn-warning" name="buttonsub" value="Submit">Submit</button>
+          <% } %>
+        </form>
+      </div>
+    </div>
+
 </div>
