@@ -41,7 +41,12 @@ Benny:
 3. Add the friends function now user can add friends by type their emails.
    The friends can also add the user automatically.
 4. Add view friends' reminders functions now user can view their friends reminders.
+5. Add error message in the add friend. Empty email, repeated email and user-self as input email will have an alert window.
 
+Watch these to learn how to add aleart window in ejs
+1. https://stackoverflow.com/questions/55058889/how-to-display-an-alert-in-ejs-file-in-nodejs
+2. https://stackoverflow.com/questions/62714698/how-to-send-window-alert-message-from-node-js
+3. https://stackoverflow.com/questions/58806892/show-alert-on-response-render-in-ejs-template-if-statement-not-working-in-ejs
 
 ##Sprint 3 (Complete - April 6, 2021)
 
@@ -54,6 +59,7 @@ Benny:
 2. Help Agnes to edit copy friend's reminders function
 3. Help Shaniah to edit the tags function
 4. Add an example file and extra comments for group members understand how the code works
+5. Add a search function in the add friend. Now type letter will automatically show the most similar email.
 
 Watch these to complete write button event in ejs and parse button value to server side
 1. https://stackoverflow.com/questions/40134104/how-to-pass-the-button-value-into-my-onclick-event-function
