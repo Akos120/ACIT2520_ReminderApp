@@ -1,5 +1,8 @@
 <div class="container">
-  <h1 class="page-header">Edit</h1>
+  <div class="row show-grid">
+    <h1 class="page-header">Edit</h1>&nbsp&nbsp
+    <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+Username%>>
+  </div>
   <form action=<%= "/reminder/update/" + reminderItem.id %> method="POST">
     <div class="form-group">
       <label for="title">Title</label>

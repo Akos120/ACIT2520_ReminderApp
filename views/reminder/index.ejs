@@ -1,6 +1,15 @@
 <div class="container">
-  <h1 class="page-header">Reminders</h1>
-
+    <div class="row show-grid">
+      <h1 class="page-header">Reminders</h1>&nbsp&nbsp
+      <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+Username%>>
+    </div>
+    <div class="row show-grid">
+      <img  src=<%="http://openweathermap.org/img/w/"+weatherdata.weather[0].icon+".png" %>>
+      <ul class="list-group" style="list-style-type:none">
+        <li > <strong><%= weatherdata.weather[0].description%></strong></li>
+        <li > <strong><%= parseInt(weatherdata.main.temp)-273%>°</strong></li>
+      </ul>
+  </div>
 <ul class="list-group">
   <% reminders.forEach(function (reminderItem) { %>
     <li class="list-group-item">
