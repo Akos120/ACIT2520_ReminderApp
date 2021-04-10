@@ -31,13 +31,49 @@ Also find how to work on git and git on vs
 
 
 ##Sprint 2 (Complete - March 29, 2021)
-
+Agnes:
+Steven:
+Shaniah:
 
 Benny:
 1. Fixed the bugs in the update function now update can use in multiple reminders.
 2. Fixed the bugs in the delete function now delete will not delete the wrong reminders.
 3. Add the friends function now user can add friends by type their emails.
    The friends can also add the user automatically.
-5. Add view friends' reminders functions now user can view their friends reminders.
+4. Add view friends' reminders functions now user can view their friends reminders.
 
+
+##Sprint 3 (Complete - April 6, 2021)
+
+Agnes:
+Steven:
+Shaniah:
+
+Benny:
+1. Add the subtask function now user can add subtasks under their reminder and delete it
+2. Help Agnes to edit copy friend's reminders function
+3. Help Shaniah to edit the tags function
+4. Add an example file and extra comments for group members understand how the code works
+
+Watch these to complete write button event in ejs and parse button value to server side
+1. https://stackoverflow.com/questions/40134104/how-to-pass-the-button-value-into-my-onclick-event-function
+2. https://stackoverflow.com/questions/38595247/passing-a-function-into-an-ejs-template-for-use-in-an-onclick-event
+3. https://stackoverflow.com/questions/64406943/executing-a-function-onclick-via-ejs-template
+
+##Sprint 4 (Complete - April 12, 2021)
+
+Agnes:
+Steven:
+Shaniah:
+
+Benny:
+1. Add a weather API now user can see the current weather and temperature of Vancouver in their index page
+2. Add a fake profile picture API(no key needed will generate a icon by send a request). Now user can see their friends profile pictures(we want to use unsplash as profile picture but the image is too big as a profile picture)
+3. fix the bug now the the friend's subtaks can correctly show on the friend's reminders
+4. fix the bug related to the profile pictures(I add the profile pictures to all the available page therefore need to add extra varible for each ejs)
+
+
+Watch these to learn how to the weather API work
+1. https://www.youtube.com/watch?v=lcWfSn6-m_8
+2. https://www.youtube.com/watch?v=SXsaB9TUfkk
 
