@@ -1,5 +1,8 @@
 <div class="container">
-    <h1 class="page-header">Friends</h1>
+    <div class="row show-grid">
+        <h1 class="page-header">Friends</h1>&nbsp&nbsp
+        <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+Username%>>
+      </div>
     <form action="/friend" method="POST">
         <div class="card my-2">
         <div class="card-body">
@@ -10,7 +13,7 @@
             <%}else if (error == 3) { %> 
                 <script>alert('You cannot repeatly add one account');</script>
             <% } %>
-            <ul id="search">
+            <ul class="list-group" id="search" >
             <% for (let i = 0; i < alluser.length;  i++ ) { %>
                 <li  style="display:none" ><%=alluser[i].email%></li>
             <% } %>
@@ -46,7 +49,9 @@
             <ul class="list-group">
 
                 <% for (let i = 0; i < account.length;  i++ ) { %>
-                    <li class="list-group-item">Name:&nbsp;&nbsp;<%=account[i].name%>&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;<%=account[i].email%>
+                    <li class="list-group-item">
+                        <img style="border-radius:50%" width="50" height="50"src=<%="https://ui-avatars.com/api/?background=random&name="+account[i].name%>>
+                        Name:&nbsp;&nbsp;<%=account[i].name%>&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;<%=account[i].email%>
                     <!-- add a status here for user know the reminders is coied or not -->
                     <a class="pull-right" href=<%= "/friend/" + account[i].name %>>View</a>
                     </li>
@@ -59,4 +64,5 @@
 
     </form>
     <a href="/logout" class="btn btn-secondary">Logout</a>
+    
 </div>
