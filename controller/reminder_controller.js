@@ -1,28 +1,43 @@
 let database = require("../database").Database;
 let account = require("../database").Account;
-let Show = true
+const fetch = require("node-fetch");
+let Show=true
+
 
 let remindersController = {
-  list: (req, res) => {
+  list: async (req, res) => {
+    let weatherkey="f64eb826175eddf4f4465398309206bb"
+    let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Vancouver&appid=${weatherkey}`)
+    let parseweather=await weather.json()
     let name =req.user.name 
-    res.render("reminder/index", { reminders: database[name].reminders });
+    res.render("reminder/index", { reminders: database[name].reminders,
+                                   weatherdata:parseweather,
+                                    Username:name});
   },
 
   new: (req, res) => {
     res.render("reminder/create");
   },
 
-  listOne: (req, res) => {
+  listOne: async (req, res) => {
     let reminderToFind = req.params.id;
     let name =req.user.name; 
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
+    let weatherkey="f64eb826175eddf4f4465398309206bb"
+    let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Vancouver&appid=${weatherkey}`)
+    let parseweather=await weather.json()
+
     if (searchResult != undefined) {
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                              Show:Show });
+                                                Show:Show,
+                                                Username:name });
+
     } else {
-      res.render("reminder/index", { reminders: database[name].reminders });
+      res.render("reminder/index", { reminders: database[name].reminders,
+                                     weather:parseweather,
+                                     Username:name});
     }
   },
 
@@ -47,7 +62,8 @@ let remindersController = {
     let searchResult = database[name].reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
-    res.render("reminder/edit", { reminderItem: searchResult });
+    res.render("reminder/edit", { reminderItem: searchResult,
+                                  Username:name});
   },
 
   update: (req, res) => {
@@ -90,6 +106,38 @@ let remindersController = {
       }
     res.redirect("/reminders");
   },
+
+  subtask:(req,res)=>{
+    let reminderToFind = req.params.id;
+    let name = req.user.name;
+    let inputvalue=req.body.buttonsub
+    let searchResult = database[name].reminders.find(function (reminder) {
+      return reminder.id == reminderToFind;
+    });
+    let num = database[name].reminders.indexOf(searchResult)
+    if(inputvalue== "add"){
+      let Show=false
+      res.render("reminder/single-reminder", { reminderItem: searchResult,
+                                                Show:Show,
+                                                Username:name })
+
+    }else if (inputvalue == "Submit"){
+      database[name].reminders[num].subtask.push(req.body.subtask)
+      let Show=true
+      res.render("reminder/single-reminder", { reminderItem: searchResult,
+                                                Show:Show,
+                                                Username:name })
+    }else{
+        let subtask = database[name].reminders[num].subtask[inputvalue]
+        let result = database[name].reminders[num].subtask.filter(elem => elem !== subtask)
+        database[name].reminders[num].subtask=result
+        res.redirect("/reminder/" + reminderToFind)
+    }
+
+  }
+  
+};
+
 
 
   subtask:(req,res)=>{
