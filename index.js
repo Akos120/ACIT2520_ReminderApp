@@ -60,22 +60,26 @@ app.get("/reminder/:id", ensureAuthenticated, reminderController.listOne);
 
 app.get("/reminder/:id/edit", ensureAuthenticated, reminderController.edit);
 
+app.post("/reminder/:id/editsub", ensureAuthenticated, reminderController.subtask);
+
+app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);
+
 app.get("/friend", ensureAuthenticated, friendcontroller.Show);
 
 app.get("/friend/:name", ensureAuthenticated, friendcontroller.View);
 
-app.post("/reminder/", reminderController.create);
+app.post("/reminder/", ensureAuthenticated, reminderController.create);
 
 // Implement this yourself
-app.post("/reminder/update/:id", reminderController.update);
+app.post("/reminder/update/:id", ensureAuthenticated, reminderController.update);
 
 // Implement this yourself
-app.post("/reminder/delete/:id", reminderController.delete);
+app.post("/reminder/delete/:id", ensureAuthenticated, reminderController.delete);
 
-app.post("/friend", friendcontroller.add);
+app.post("/friend", ensureAuthenticated, friendcontroller.add);
 
 // To see friend's reminders in detail
-app.get("/friend/:name/:id", friendcontroller.friendRemind)
+app.get("/friend/:name/:id", ensureAuthenticated, friendcontroller.friendRemind)
 
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
 
