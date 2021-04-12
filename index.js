@@ -67,6 +67,7 @@ app.get("/friend", ensureAuthenticated, friendcontroller.Show);
 
 app.get("/friend/:name", ensureAuthenticated, friendcontroller.View);
   
+app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);
 
 app.post("/reminder/", ensureAuthenticated, reminderController.create);
 
