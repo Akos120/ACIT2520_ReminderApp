@@ -13,7 +13,9 @@
             <%}else if (error == 3) { %> 
                 <script>alert('You cannot repeatly add one account');</script>
             <% } %>
+
             <ul class="list-group" id="search" >
+
             <% for (let i = 0; i < alluser.length;  i++ ) { %>
                 <li  style="display:none" ><%=alluser[i].email%></li>
             <% } %>
@@ -36,8 +38,10 @@
                             allaccounts[i].style.display='none'
                         }
 
+
                     }
                     
+
 
                 }
             </script>

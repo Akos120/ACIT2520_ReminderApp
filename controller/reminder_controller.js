@@ -3,6 +3,7 @@ let account = require("../database").Account;
 const fetch = require("node-fetch");
 let Show=true
 
+
 let remindersController = {
   list: async (req, res) => {
     let weatherkey="f64eb826175eddf4f4465398309206bb"
@@ -32,6 +33,7 @@ let remindersController = {
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
                                                 Username:name });
+
     } else {
       res.render("reminder/index", { reminders: database[name].reminders,
                                      weather:parseweather,
@@ -130,11 +132,37 @@ let remindersController = {
         database[name].reminders[num].subtask=result
         res.redirect("/reminder/" + reminderToFind)
     }
+  },
+
+
+  tags:(req,res)=>{
+    let reminderToFind = req.params.id;
+    let name = req.user.name;
+    let inputvalue=req.body.buttonsub
+    let searchResult = database[name].reminders.find(function (reminder) {
+      return reminder.id == reminderToFind;
+    });
+    let person = database[name].reminders.indexOf(searchResult)
+    if(inputvalue== "add"){
+      let Show=false
+      res.render("reminder/single-reminder", { reminderItem: searchResult,
+                                                Show:Show,
+                                                Username:name })
+
+    }else if (inputvalue == "Submit"){
+      database[name].reminders[person].tag.push(req.body.tag)
+      let Show=true
+      res.render("reminder/single-reminder", { reminderItem: searchResult,
+                                                Show:Show,
+                                                Username:name })
+    }else{
+        let tag = database[name].reminders[person].tag[inputvalue]
+        let result = database[name].reminders[person].tag.filter(elem => elem !== tag)
+        database[name].reminders[person].tag=result
+        res.redirect("/reminder/" + reminderToFind)
+    }
   }
-  
 };
 
 
-
 module.exports = remindersController
-

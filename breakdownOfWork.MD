@@ -86,3 +86,6 @@ Watch these to learn how to the weather API work
 1. https://www.youtube.com/watch?v=lcWfSn6-m_8
 2. https://www.youtube.com/watch?v=SXsaB9TUfkk
 
+Shaniah:
+1. Created tag functionality
+2. Rewatched lecture video for the week to ensure I was on the right path
