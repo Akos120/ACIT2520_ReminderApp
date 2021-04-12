@@ -29,6 +29,7 @@ let friendcontroller={
                                      listener:"filter()",
                                      Username:name})
 
+
     },
 
     add:(req,res)=>{
@@ -54,18 +55,21 @@ let friendcontroller={
                                          alluser:account,
                                          listener:"filter()",
                                          Username:name});
+
         }else if(searchuser.id == currentuser.id){
             res.render("Social/friend", {account:currentuser.friends,
                                          error:2,
                                          alluser:account,
                                          listener:"filter()",
                                          Username:name});
+
         }else if(checkfriend(searchuser,currentuser) != undefined){
             res.render("Social/friend", {account:currentuser.friends,
                                          error:3,
                                          alluser:account,
                                          listener:"filter()",
                                          Username:name});
+
         }else{
             currentuser.friends.push({id:searchuser.id,name:searchuser.name,email:searchuser.email})
             searchuser.friends.push({id: currentuser.id,name: currentuser.name,email: currentuser.email})
@@ -74,6 +78,7 @@ let friendcontroller={
                                          alluser:account,
                                          listener:"filter()",
                                          Username:name})
+
         }
     },
 
