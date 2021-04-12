@@ -134,37 +134,8 @@ let remindersController = {
         res.redirect("/reminder/" + reminderToFind)
     }
 
-  }
-  
-};
-
-
-
-  subtask:(req,res)=>{
-    let reminderToFind = req.params.id;
-    let name = req.user.name;
-    let inputvalue=req.body.buttonsub
-    let searchResult = database[name].reminders.find(function (reminder) {
-      return reminder.id == reminderToFind;
-    });
-    let num = database[name].reminders.indexOf(searchResult)
-    if(inputvalue== "add"){
-      let Show=false
-      res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
-
-    }else if (inputvalue == "Submit"){
-      database[name].reminders[num].subtask.push(req.body.subtask)
-      let Show=true
-      res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
-    }else{
-        let subtask = database[name].reminders[num].subtask[inputvalue]
-        let result = database[name].reminders[num].subtask.filter(elem => elem !== subtask)
-        database[name].reminders[num].subtask=result
-        res.redirect("/reminder/" + reminderToFind)
-    }
   },
+  
 
 
 
@@ -179,13 +150,15 @@ let remindersController = {
     if(inputvalue== "add"){
       let Show=false
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
+                                                Show:Show,
+                                                Username:name})
 
     }else if (inputvalue == "Submit"){
       database[name].reminders[person].tag.push(req.body.tag)
       let Show=true
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
+                                                Show:Show,
+                                                Username:name})
     }else{
         let tag = database[name].reminders[person].tag[inputvalue]
         let result = database[name].reminders[person].tag.filter(elem => elem !== tag)
