@@ -5,7 +5,7 @@ let Database = {
 
     },
     alex: {
-        reminders: [{id: 2, title: "alex", description: "784516", completed: false, date: "2022-04-17T12:01", tag: [], subtask: []}]
+        reminders: [{id: 2, title: "alex", description: "784516", completed: false, date: "2022-04-17T12:01", tag: ['hi'], subtask: []}]
     },
     jax: {
         reminders: [{id: 3, title: "jax", description: "newnewnew", completed: false, date: "2021-03-17T13:51", tag: [], subtask: []}]

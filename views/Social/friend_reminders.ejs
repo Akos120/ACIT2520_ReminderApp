@@ -1,20 +1,22 @@
 <div class="container">
     <h1 class="page-header"><%=friendname%>'s Reminders</h1>
   
-  <ul class="list-group">
-    <% reminders.forEach(function (reminderItem) { %>
-      <li class="list-group-item">
-        <strong><%= reminderItem.title %>: </strong>
-        <%= reminderItem.description %>
-        || Completed:
-        <% if (reminderItem.completed == true) { %>
-          <span class="badge badge-success">True</span>
-        <% } else if (reminderItem.completed == false) { %>
-          <span class="badge badge-danger">False</span>
-        <% } %>
-
-        || Remind By:
-        <%= reminderItem.date.replace("T", " ") %>
+    <ul class="list-group">
+      <% reminders.forEach(function (reminderItem) { %>
+        <li class="list-group-item">
+          <strong><%= reminderItem.title %> </strong>
+            <% for (i = 0; i < reminderItem.tag.length; i++) { %>
+            <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+             <% } %>
+             <%= reminderItem.description %>
+          Completed:
+          <% if (reminderItem.completed == true) { %>
+            <span class="badge badge-success">True</span>
+          <% } else if (reminderItem.completed == false) { %>
+            <span class="badge badge-danger">False</span>
+          <% } %>
+          || Remind Me:
+          <%= reminderItem.date.replace("T", " ") %>
         
 
         
