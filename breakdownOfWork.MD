@@ -52,6 +52,5 @@ Agnes:
 
 Sprint 4 (April 12, 2021)
 Agnes:
-1. Worked on fixing up the friednd's reminders on your list
+1. Worked on fixing up the friedd's reminders on your list
 2. Looked up Post method, input types, array methods, ejs formatting
-3. Troubleshooting getting more than one reminder to be added

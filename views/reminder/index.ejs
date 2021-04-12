@@ -21,9 +21,10 @@
 </ul>
 <br>
 <br>
+<% if (friendsReminders.length > 0) { %>
 <h1>Friend's Reminders</h1>
 <ul class="list-group">
-  <% if (friends.length > 0) { %>
+
   <% friendsReminders.forEach(function (reminderItem) { %>
     <li class="list-group-item">
       <strong><%= reminderItem.title %>: </strong>
@@ -37,7 +38,7 @@
       <% } %>
       || Remind Me:
       <%= reminderItem.date.replace("T", " ") %>
-      <a class="pull-right" href=<%= "/friend/" + reminderItem.name + "/" + reminderItem.id %>>View</a>
+      <a class="pull-right" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
     </li>
   <% })} %>
 </ul>
