@@ -41,3 +41,6 @@ Benny:
 5. Add view friends' reminders functions now user can view their friends reminders.
 
 
+Shaniah:
+1. Created tag functionality
+2. Rewatched lecture video for the week to ensure I was on the right path

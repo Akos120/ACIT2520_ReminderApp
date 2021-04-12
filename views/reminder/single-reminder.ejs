@@ -5,7 +5,6 @@
       <li class="list-group-item">
         <h3><strong><%= reminderItem.title %>: </strong></h3>
         <h4><%= reminderItem.description %></h4>
-        <h4><%= reminderItem.tag %></h4>
         <h4>Completed:
           <% if (reminderItem.completed == true) { %>
             <span class="label label-success">True</span>
@@ -26,13 +25,15 @@
 
         <div class="card my-2">
       <div class="card-body">
-        <h3><strong>Subtask</strong></h3>
+        <h3><strong>Subtasks</strong></h3>
         <form class="deleteForm "method="POST" action=<%= "/reminder/" + reminderItem.id + "/editsub" %>>
-          <ul>
+          <ul class="list-unstyled">
           <% for (let i = 0; i < reminderItem.subtask.length;  i++ ) { %>
-            <li class="list-group-item"><strong><%=reminderItem.subtask[i]%></strong>
-            <button type="submit" class="btn btn-danger" name="buttonsub" value=<%= i %>>Delete</button>
-            </li>
+            <li class="list-group-item"><strong></strong><%=reminderItem.subtask[i]%></strong>
+              <button type="submit" class="close text-danger" aria-label="Close" name="buttonsub" value=<%= i %>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </li>
           <% } %>
           </ul>
           <% if (Show == true) { %>
@@ -45,4 +46,26 @@
       </div>
     </div>
 
+    <div class="card my-3">
+      <div class="card-body">
+        <h3><strong>Tags</strong></h3>
+        <form class="deleteForm "method="POST" action=<%= "/reminder/" + reminderItem.id + "/tag" %>>
+          <ul class="list-inline">
+          <% for (let i = 0; i < reminderItem.tag.length;  i++ ) { %>
+            <li class="list-inline-item"><span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+              <button type="submit" class="close text-danger" aria-label="Close" name="buttonsub" value=<%= i %>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </li>
+          <% } %>
+          </ul>
+          <% if (Show == true) { %>
+          <button type="submit" class="btn btn-primary  my-3" name="buttonsub" value="add">add</button>
+          <% } else {%>
+            <input type="text" class="form-control" id="titleInput" placeholder="Type your tag" name="tag">
+            <button type="submit" class="btn btn-warning" name="buttonsub" value="Submit">Submit</button>
+          <% } %>
+        </form>
+      </div>
+    </div>
 </div>

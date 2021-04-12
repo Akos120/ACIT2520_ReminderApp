@@ -4,10 +4,12 @@
 <ul class="list-group">
   <% reminders.forEach(function (reminderItem) { %>
     <li class="list-group-item">
-      <strong><%= reminderItem.title %>: </strong>
-      <%= reminderItem.description %>
-      || <i><%= reminderItem.tag %></i>
-      || Completed:
+      <strong><%= reminderItem.title %> </strong>
+        <% for (i = 0; i < reminderItem.tag.length; i++) { %>
+        <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+         <% } %>
+         <%= reminderItem.description %>
+      Completed:
       <% if (reminderItem.completed == true) { %>
         <span class="badge badge-success">True</span>
       <% } else if (reminderItem.completed == false) { %>
