@@ -12,10 +12,9 @@
   </div>
 <ul class="list-group">
   <% reminders.forEach(function (reminderItem) { %>
-    <li class="list-group-item">
-      <strong><%= reminderItem.title %>: </strong>
-      <%= reminderItem.description %>
-      || <i><%= reminderItem.tag %></i>
+    <li class="list-group-item" style="padding-bottom: 0.25rem;">
+      <strong><%= reminderItem.title %> </strong>
+      || <i class="badge badge-warning"><%= reminderItem.tag %></i>
       || Completed:
       <% if (reminderItem.completed == true) { %>
         <span class="badge badge-success">True</span>
@@ -24,12 +23,15 @@
       <% } %>
       || Remind Me:
       <%= reminderItem.date.replace("T", " ") %>
-      <a class="pull-right" href=<%= "/reminder/" + reminderItem.id %>>View</a>
+      <a class="pull-right badge badge-primary" href=<%= "/reminder/" + reminderItem.id %>>View</a>
+      <span class="align-middle">
+        <p><%= reminderItem.description %></p>
+      </span>
     </li>
   <% }) %>
 </ul>
 
 <!-- <h1 class="frend-header">Friend's Reminders</h1> -->
 
-<a href="/logout" class="btn btn-secondary">Logout</a>
+<a href="/logout" class="btn btn-secondary" style="margin-top: 0.25rem">Logout</a>
 </div>

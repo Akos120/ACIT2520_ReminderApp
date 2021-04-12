@@ -6,9 +6,9 @@
   
   <ul class="list-group">
     <% reminders.forEach(function (reminderItem) { %>
-      <li class="list-group-item">
+      <li class="list-group-item" style="padding-bottom: 0.25rem;">
         <strong><%= reminderItem.title %>: </strong>
-        <%= reminderItem.description %>
+        || <i class="badge badge-warning"><%= reminderItem.tag %></i>
         || Completed:
         <% if (reminderItem.completed == true) { %>
           <span class="badge badge-success">True</span>
@@ -21,7 +21,10 @@
         
 
         
-        <a class="pull-right" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
+        <a class="pull-right badge badge-primary" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
+        <span class="align-middle">
+          <p><%= reminderItem.description %></p>
+        </span>
       </li>
     <% }) %>
   </ul>
