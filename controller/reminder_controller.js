@@ -133,6 +133,7 @@ let remindersController = {
         res.redirect("/reminder/" + reminderToFind)
     }
   },
+  
 
 
   tags:(req,res)=>{
@@ -147,14 +148,14 @@ let remindersController = {
       let Show=false
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
-                                                Username:name })
+                                                Username:name})
 
     }else if (inputvalue == "Submit"){
       database[name].reminders[person].tag.push(req.body.tag)
       let Show=true
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
-                                                Username:name })
+                                                Username:name})
     }else{
         let tag = database[name].reminders[person].tag[inputvalue]
         let result = database[name].reminders[person].tag.filter(elem => elem !== tag)
