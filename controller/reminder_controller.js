@@ -2,6 +2,7 @@ let database = require("../database").Database;
 let account = require("../database").Account;
 const fetch = require("node-fetch");
 let Show=true
+let Tag_show=true
 
 
 let remindersController = {
@@ -32,6 +33,7 @@ let remindersController = {
     if (searchResult != undefined) {
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
+                                                Tag_show:Tag_show,
                                                 Username:name });
 
     } else {
@@ -47,7 +49,7 @@ let remindersController = {
       id: database[name].reminders.length + 1,
       title: req.body.title,
       description: req.body.description,
-      tag: req.body.tag,
+      tag: [req.body.tag],
       completed: false,
       date: req.body.date,
       subtask: []
@@ -119,6 +121,7 @@ let remindersController = {
       let Show=false
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
+                                                Tag_show:Tag_show,
                                                 Username:name })
 
     }else if (inputvalue == "Submit"){
@@ -126,6 +129,7 @@ let remindersController = {
       let Show=true
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
+                                                Tag_show:Tag_show,
                                                 Username:name })
     }else{
         let subtask = database[name].reminders[num].subtask[inputvalue]
@@ -134,37 +138,8 @@ let remindersController = {
         res.redirect("/reminder/" + reminderToFind)
     }
 
-  }
-  
-};
-
-
-
-  subtask:(req,res)=>{
-    let reminderToFind = req.params.id;
-    let name = req.user.name;
-    let inputvalue=req.body.buttonsub
-    let searchResult = database[name].reminders.find(function (reminder) {
-      return reminder.id == reminderToFind;
-    });
-    let num = database[name].reminders.indexOf(searchResult)
-    if(inputvalue== "add"){
-      let Show=false
-      res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
-
-    }else if (inputvalue == "Submit"){
-      database[name].reminders[num].subtask.push(req.body.subtask)
-      let Show=true
-      res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
-    }else{
-        let subtask = database[name].reminders[num].subtask[inputvalue]
-        let result = database[name].reminders[num].subtask.filter(elem => elem !== subtask)
-        database[name].reminders[num].subtask=result
-        res.redirect("/reminder/" + reminderToFind)
-    }
   },
+  
 
 
 
@@ -177,15 +152,19 @@ let remindersController = {
     });
     let person = database[name].reminders.indexOf(searchResult)
     if(inputvalue== "add"){
-      let Show=false
+      let Tag_show=false
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
+                                                Show:Show,
+                                                Tag_show:Tag_show,
+                                                Username:name})
 
     }else if (inputvalue == "Submit"){
       database[name].reminders[person].tag.push(req.body.tag)
-      let Show=true
+      let Tag_show=true
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show })
+                                                Show:Show,
+                                                Tag_show:Tag_show,
+                                                Username:name})
     }else{
         let tag = database[name].reminders[person].tag[inputvalue]
         let result = database[name].reminders[person].tag.filter(elem => elem !== tag)
