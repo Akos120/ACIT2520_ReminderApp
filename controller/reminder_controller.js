@@ -3,8 +3,14 @@ let account = require("../database").Account;
 
 let remindersController = {
   list: (req, res) => {
-    let name =req.user.name 
-    res.render("reminder/index", { reminders: database[name].reminders, friendReminders: database[name].friendReminders });
+    let name =req.user.name
+    let user_id = req.user.id;
+        // find the current user friend list
+    let currentuser = account.find(function (user) {
+        return user.id == user_id;
+        });
+
+    res.render("reminder/index", { reminders: database[name].reminders, friends: currentuser.friends});
   },
 
   new: (req, res) => {

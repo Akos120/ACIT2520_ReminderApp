@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 });
 
 
-app.get("/reminders",ensureAuthenticated, reminderController.list);
+app.get("/reminders",ensureAuthenticated, reminderController.list, friendcontroller.addReminder);
 
 app.get("/reminder/new", ensureAuthenticated, reminderController.new);
 
@@ -76,6 +76,9 @@ app.post("/friend", friendcontroller.add);
 
 // To see friend's reminders in detail
 app.get("/friend/:name/:id", friendcontroller.friendRemind)
+
+// adding friends remidners to your list
+app.post("/reminders", friendcontroller.addReminder)
 
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
 

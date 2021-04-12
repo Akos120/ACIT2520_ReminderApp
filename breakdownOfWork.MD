@@ -48,4 +48,10 @@ Agnes:
 1. Worked to allow adding of friend's reminders to your list
 2. Looked up various array methods (includes(), indexOf(), find())
 3. Looked up how to assign a single method to a button in ejs and node
-##Sprint 2 (Complete - March 29, 2021)
+4. Troubleshooting how to allow function to run only on button push (google and Benny's help)
+
+Sprint 4 (April 12, 2021)
+Agnes:
+1. Worked on fixing up the friednd's reminders on your list
+2. Looked up Post method, input types, array methods, ejs formatting
+3. Troubleshooting getting more than one reminder to be added

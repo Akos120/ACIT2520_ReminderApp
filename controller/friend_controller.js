@@ -53,6 +53,7 @@ let friendcontroller={
             res.render("Social/friend", {account:currentuser.friends,
                                          error:0})
         }
+        console.log('account[0].friends', account[0].friends)
     },
 
     View:(req,res)=>{
@@ -61,22 +62,10 @@ let friendcontroller={
 
         // adding their reminders to your list
         let user = req.user.name
-        let addReminder = () => {
-            console.log('this is database[user].reminders', database[user].reminders)
-            database[name].reminders.forEach(reminder => {
-            if (reminder.id in database[user].friendReminders) {
-                return
-            } else {
-                console.log('reminder', reminder)
-                console.log(database[user].friendReminders)
-                reminder.name = name
-                database[user].friendReminders.push(reminder)
-            }});
-        }
+        
         // send the friend reminders and name to the ejs
         res.render("Social/friend_reminders", { reminders: database[name].reminders,
-                                                friendname:name,
-                                                addReminder: addReminder()});
+                                                friendname:name });
     },
 
     friendRemind: (req, res) => {
@@ -91,6 +80,25 @@ let friendcontroller={
           res.render("Social/friend_reminders", { reminders: database[name].reminders });
         }
       },
+
+    addReminder: (req, res) => {
+        let user = req.user.name
+        let reminderId = req.body.reminderId
+        let reminderName = req.body.reminderName
+        let user_id = req.user.id;
+
+        // find the current user friend list
+        let currentuser = account.find(function (user) {
+            return user.id == user_id;
+            });
+
+        let search = database[reminderName].reminders.find(function (reminder) {
+        return reminder.id == reminderId;
+        });
+        database[user].friendReminders.push(search)
+        
+        res.render("reminder/index", { reminders: database[user].reminders, friendsReminders: database[user].friendReminders, friends: currentuser.friends });
+        }
 };
 
 

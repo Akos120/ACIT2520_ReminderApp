@@ -19,10 +19,15 @@
 
         
         <a class="pull-right" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
+        <form action="/reminders" method="POST">
+          <input type="hidden" name="reminderId" value=<%= reminderItem.id %>>
+          <input type="checkbox" name="reminderName" value=<%= friendname %> >
       </li>
       <!-- <button type="submit" class="btn btn-warning" onclick=<&=addReminder %>>Add to Your List</button> -->
     <% }) %>
-    <a href="/reminders" onclick= <%=addReminder%>>Add to Your List</a>
+    
+      <button type="submit">Add to Your List</button>
+    </form>
   </ul>
   <!-- <a href="/logout" class="btn btn-secondary">Logout</a> -->
   <!-- You should add copy buttion here -->
