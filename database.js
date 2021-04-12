@@ -2,16 +2,15 @@ let Database = {
     cindy: {
         reminders: [{id: 1, title: "abc", description: "abcabc", completed: false, date: "2021-03-17T19:01",tag:["test"],
                     subtask:['wake up at 7','77788','465132']}]
-
     },
     alex: {
-        reminders: [{id: 2, title: "alex", description: "784516", completed: false, date: "2022-04-17T12:01",tag:["hello"],
-                    subtask:['kjabv','SDF']}]
+        reminders: [{id: 2, title: "alex", description: "784516", completed: false, date: "2022-04-17T12:01",
+            tag:['hi'], subtask:['kjabv','SDF']}]
     },
     jax: {
-        reminders: [{id: 3, title: "jax", description: "newnewnew", completed: false, date: "2021-03-17T13:51",tag:["hello1"],
-                    subtask:[]}]
-    } 
+        reminders: [{id: 3, title: "jax", description: "newnewnew", completed: false, date: "2021-03-17T13:51",
+        tag:[], subtask:[]}]
+    } ,
 }
 
 let Account=[

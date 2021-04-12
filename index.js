@@ -77,6 +77,8 @@ app.post("/reminder/update/:id", ensureAuthenticated, reminderController.update)
 // Implement this yourself
 app.post("/reminder/delete/:id", ensureAuthenticated, reminderController.delete);
 
+app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);
+
 app.post("/friend", ensureAuthenticated, friendcontroller.add);
 
 // To see friend's reminders in detail
