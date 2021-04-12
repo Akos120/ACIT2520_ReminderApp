@@ -33,7 +33,10 @@ Also find how to work on git and git on vs
 ##Sprint 2 (Complete - March 29, 2021)
 Agnes:
 Steven:
+
 Shaniah:
+1. Created tag functionality
+2. Rewatched lecture video for the week to ensure I was on the right path
 
 Benny:
 1. Fixed the bugs in the update function now update can use in multiple reminders.
@@ -52,7 +55,11 @@ Watch these to learn how to add aleart window in ejs
 
 Agnes:
 Steven:
+
 Shaniah:
+1. Examined group code to better understand what each function was doing that I did not create myself
+2. Researched how to add bootstrap to code
+3. Implemented tag functionality as a separate & independent feature (create, edit, delete)
 
 Benny:
 1. Add the subtask function now user can add subtasks under their reminder and delete it
@@ -70,7 +77,13 @@ Watch these to complete write button event in ejs and parse button value to serv
 
 Agnes:
 Steven:
+
 Shaniah:
+1. Did more research on bootstrap and examples to try and make our tags and delete buttons look nice
+2. Changed tags to display in a horizontal manner instead of vertical 
+3. Added tags to show for friends reminders
+4. Group meeting to make sure everyone's functions work well with each other
+5. Made a fix to tag creation, made tag variable a list instead
 
 Benny:
 1. Add a weather API now user can see the current weather and temperature of Vancouver in their index page
@@ -82,7 +95,3 @@ Benny:
 Watch these to learn how to the weather API work
 1. https://www.youtube.com/watch?v=lcWfSn6-m_8
 2. https://www.youtube.com/watch?v=SXsaB9TUfkk
-
-Shaniah:
-1. Created tag functionality
-2. Rewatched lecture video for the week to ensure I was on the right path
