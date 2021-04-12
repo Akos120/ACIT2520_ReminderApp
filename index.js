@@ -62,11 +62,11 @@ app.get("/reminder/:id/edit", ensureAuthenticated, reminderController.edit);
 
 app.post("/reminder/:id/editsub", ensureAuthenticated, reminderController.subtask);
 
-app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);
 
 app.get("/friend", ensureAuthenticated, friendcontroller.Show);
 
 app.get("/friend/:name", ensureAuthenticated, friendcontroller.View);
+  
 
 app.post("/reminder/", ensureAuthenticated, reminderController.create);
 

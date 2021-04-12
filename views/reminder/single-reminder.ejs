@@ -1,5 +1,8 @@
 <div class="container">
-  <h1 class="page-header">Reminders</h1>
+  <div class="row show-grid">
+    <h1 class="page-header">Reminders</h1>&nbsp&nbsp
+    <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+Username%>>
+  </div>
 
     <ul class="list-group">
       <li class="list-group-item">
@@ -19,21 +22,22 @@
         <form class="deleteForm "method="POST" action=<%= "/reminder/delete/" + reminderItem.id %>>
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
+        
 
       </li>
     </ul>
 
-        <div class="card my-2">
+
+    <div class="card my-2">
       <div class="card-body">
-        <h3><strong>Subtasks</strong></h3>
+        <h3><strong>Subtask</strong></h3>
         <form class="deleteForm "method="POST" action=<%= "/reminder/" + reminderItem.id + "/editsub" %>>
-          <ul class="list-unstyled">
+          <ul class="list-group">
           <% for (let i = 0; i < reminderItem.subtask.length;  i++ ) { %>
-            <li class="list-group-item"><strong></strong><%=reminderItem.subtask[i]%></strong>
-              <button type="submit" class="close text-danger" aria-label="Close" name="buttonsub" value=<%= i %>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              </li>
+            <li class="list-group-item"><strong><%=reminderItem.subtask[i]%></strong>
+            <button type="submit" class="btn btn-danger" name="buttonsub" value=<%= i %>>Delete</button>
+            </li>
+
           <% } %>
           </ul>
           <% if (Show == true) { %>
@@ -45,6 +49,7 @@
         </form>
       </div>
     </div>
+
 
     <div class="card my-3">
       <div class="card-body">
@@ -69,3 +74,5 @@
       </div>
     </div>
 </div>
+
+
