@@ -33,6 +33,9 @@ Also find how to work on git and git on vs
 ##Sprint 2 (Complete - March 29, 2021)
 Agnes:
 Steven:
+1. Research how to use datetime-local
+2. Added dates and times to reminders
+3. Fixed small bug in update funtion where it only updated the first reminder
 
 Shaniah:
 1. Created tag functionality
@@ -55,6 +58,8 @@ Watch these to learn how to add aleart window in ejs
 
 Agnes:
 Steven:
+1. Fixed bug where you can't add subtasks to reminders you just created
+2. Fixed bug where it would always add subtask to the first reminder
 
 Shaniah:
 1. Examined group code to better understand what each function was doing that I did not create myself
@@ -77,6 +82,10 @@ Watch these to complete write button event in ejs and parse button value to serv
 
 Agnes:
 Steven:
+1. Researched how to use bootstrap
+2. Added styling such as paddings and margins to make buttons look cleaner
+3. Googled images to add to main page
+4. Edited the main page to better suit our project (Added info about weather API, added more example feedback, and added more variety in customer pictures)
 
 Shaniah:
 1. Did more research on bootstrap and examples to try and make our tags and delete buttons look nice
