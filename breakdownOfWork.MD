@@ -49,9 +49,9 @@ Benny:
 1. Fixed the bugs in the update function now update can use in multiple reminders.
 2. Fixed the bugs in the delete function now delete will not delete the wrong reminders.
 3. Add the friends function now user can add friends by type their emails.
-   The friends can also add the user automatically.
-4. Add view friends' reminders functions now user can view their friends reminders.
-5. Add error message in the add friend. Empty email, repeated email and user-self as input email will have an alert window.
+4.  The friends can also add the user automatically.
+5. Add view friends' reminders functions now user can view their friends reminders.
+6. Add error message in the add friend. Empty email, repeated email and user-self as input email will have an alert window.
 
 Watch these to learn how to add aleart window in ejs
 1. https://stackoverflow.com/questions/55058889/how-to-display-an-alert-in-ejs-file-in-nodejs
