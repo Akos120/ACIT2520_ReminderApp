@@ -84,10 +84,14 @@ let friendcontroller={
 
     View:(req,res)=>{
         // get the friend name from url
-        let name =req.params.name 
+        let name = req.params.name 
+
+        // adding their reminders to your list
+        let user = req.user.name
+        
         // send the friend reminders and name to the ejs
         res.render("Social/friend_reminders", { reminders: database[name].reminders,
-                                                friendname:name});
+                                                friendname:name });
     },
 
     friendRemind: (req, res) => {
@@ -102,6 +106,40 @@ let friendcontroller={
           res.render("Social/friend_reminders", { reminders: database[name].reminders });
         }
       },
+
+    addReminder: async (req, res) => {
+        let user = req.user.name
+        let reminderName = req.body.reminderName
+        let user_id = req.user.id;
+        let weatherkey="f64eb826175eddf4f4465398309206bb"
+        let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Vancouver&appid=${weatherkey}`)
+        let parseweather=await weather.json()
+
+        //find the current user friend list
+        let currentuser = account.find(function (user) {
+            return user.id == user_id;
+            });
+
+        //adding friend's reminders to your database if they are not already there
+        database[reminderName].reminders.forEach(reminder => {
+            if (database[user].friendReminders.indexOf(reminder) == -1) {
+                reminderAddName = reminder
+                reminderAddName.name = reminderName
+                database[user].friendReminders.push(reminderAddName)
+            }
+            if (database[user].friends.indexOf(reminderName) == -1) {
+                database[user].friends.push(reminderName)
+            }
+        });
+
+        res.render("reminder/index", { 
+            reminders: database[user].reminders, 
+            friendsReminders: database[user].friendReminders, 
+            friendlist: database[user].friends,
+            weatherdata:parseweather,
+            Username: user,
+        });
+    }
 };
 
 

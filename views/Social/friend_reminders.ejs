@@ -21,12 +21,17 @@
         
 
         
-        <a class="pull-right badge badge-primary" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
-        <span class="align-middle">
-          <p><%= reminderItem.description %></p>
-        </span>
+        <a class="pull-right" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
+
+        
       </li>
+      <!-- <button type="submit" class="btn btn-warning" onclick=<&=addReminder %>>Add to Your List</button> -->
     <% }) %>
+    <form action="/reminders" method="POST">
+      <input type="hidden" name="reminderName" value=<%= friendname %> >
+      <br>
+      <button type="submit" class="btn btn-outline-success">Add to Your List</button>
+    </form>
   </ul>
   <!-- <a href="/logout" class="btn btn-secondary">Logout</a> -->
   <!-- You should add copy buttion here -->
