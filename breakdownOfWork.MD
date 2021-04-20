@@ -123,4 +123,9 @@ Watch these to learn how to the weather API work
 Agnes:
 1. Finished adding friend's reminders functionality
 2. Made the ejs script for adding to your list of reminders dynamic
-3. Changed aesthetics of buttons
+3. Changed aesthetics of buttons 
+
+Shaniah:
+1. Made some final changes to tags 
+2. Tested functionality and debugging as a group over Discord
+

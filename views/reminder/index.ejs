@@ -14,8 +14,10 @@
   <% reminders.forEach(function (reminderItem) { %>
     <li class="list-group-item" style="padding-bottom: 0.25rem;">
       <strong><%= reminderItem.title %> </strong>
-      || <i class="badge badge-warning"><%= reminderItem.tag %></i>
-      || Completed:
+        <% for (i = 0; i < reminderItem.tag.length; i++) { %>
+        <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+         <% } %>
+         || Completed:
       <% if (reminderItem.completed == true) { %>
         <span class="badge badge-success">True</span>
       <% } else if (reminderItem.completed == false) { %>
@@ -39,7 +41,10 @@
     <% if (friendlist.length > 0) { %>
       <% friendlist.forEach(function (name) { %>
         <ul class="list-group">
-        <h2><%=name.toUpperCase()%>'s</h2>
+        <div class="row show-grid">
+          <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+name%>>&nbsp&nbsp
+          <h2><%=name%></h2>
+        </div>
         <% friendsReminders.forEach(function (reminderItem) { %>
           <% if (reminderItem.name == name) { %>
             <li class="list-group-item">
@@ -47,8 +52,6 @@
               <% for (i = 0; i < reminderItem.tag.length; i++) { %>
                 <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
                  <% } %>
-              <%= reminderItem.description %>
-              || <i><%= reminderItem.tag %></i>
               || Completed:
               <% if (reminderItem.completed == true) { %>
                 <span class="badge badge-success">True</span>
