@@ -1,5 +1,4 @@
 ##Sprint 1 (Complete - March 22, 2021)
-
 Agnes:
 1. Created github repository
 2. Created the breakdown of work file, and pushed to repo
@@ -32,6 +31,9 @@ Also find how to work on git and git on vs
 
 ##Sprint 2 (Complete - March 29, 2021)
 Agnes:
+1. Added ability to view friend's reminders in detail
+2. Rewatched some lecture videos
+
 Steven:
 1. Research how to use datetime-local
 2. Added dates and times to reminders
@@ -54,9 +56,14 @@ Watch these to learn how to add aleart window in ejs
 2. https://stackoverflow.com/questions/62714698/how-to-send-window-alert-message-from-node-js
 3. https://stackoverflow.com/questions/58806892/show-alert-on-response-render-in-ejs-template-if-statement-not-working-in-ejs
 
-##Sprint 3 (Complete - April 6, 2021)
 
+##Sprint 3 (Complete - April 6, 2021)
 Agnes:
+1. Worked to allow adding of friend's reminders to your list
+2. Looked up various array methods (includes(), indexOf(), find())
+3. Looked up how to assign a single method to a button in ejs and node
+4. Troubleshooting how to allow function to run only on button push (google and Benny's help)
+
 Steven:
 1. Fixed bug where you can't add subtasks to reminders you just created
 2. Fixed bug where it would always add subtask to the first reminder
@@ -79,8 +86,13 @@ Watch these to complete write button event in ejs and parse button value to serv
 3. https://stackoverflow.com/questions/64406943/executing-a-function-onclick-via-ejs-template
 
 ##Sprint 4 (Complete - April 12, 2021)
-
 Agnes:
+1. Worked on fixing up the friend's reminders on your list
+2. Looked up Post method, input types, array methods, ejs formatting, bootstrap
+1. Finished adding friend's reminders functionality
+2. Made the ejs script for adding to your list of reminders dynamic
+3. Changed aesthetics of buttons
+
 Steven:
 1. Researched how to use bootstrap
 2. Added styling such as paddings and margins to make buttons look cleaner
@@ -100,7 +112,7 @@ Benny:
 3. fix the bug now the the friend's subtaks can correctly show on the friend's reminders
 4. fix the bug related to the profile pictures(I add the profile pictures to all the available page therefore need to add extra varible for each ejs)
 
-
 Watch these to learn how to the weather API work
 1. https://www.youtube.com/watch?v=lcWfSn6-m_8
 2. https://www.youtube.com/watch?v=SXsaB9TUfkk
+

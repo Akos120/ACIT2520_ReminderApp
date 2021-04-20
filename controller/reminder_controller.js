@@ -13,7 +13,9 @@ let remindersController = {
     let name =req.user.name 
     res.render("reminder/index", { reminders: database[name].reminders,
                                    weatherdata:parseweather,
-                                    Username:name});
+                                    Username:name,
+                                    friendsReminders: database[name].friendReminders, 
+                                    friendlist: database[name].friends});
   },
 
   new: (req, res) => {
