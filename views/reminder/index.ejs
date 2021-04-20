@@ -30,8 +30,46 @@
     </li>
   <% }) %>
 </ul>
+<br>
+<br>
+<% if (friendsReminders.length > 0) { %>
+<h1>Friend's Reminders</h1>
+<div class="container">
+  <!-- <ul class="list-group"> -->
+    <% if (friendlist.length > 0) { %>
+      <% friendlist.forEach(function (name) { %>
+        <ul class="list-group">
+        <h2><%=name%>'s</h2>
+        <% friendsReminders.forEach(function (reminderItem) { %>
+          <% if (reminderItem.name == name) { %>
+            <li class="list-group-item">
+              <strong><%= reminderItem.title %>: </strong>
+              <% for (i = 0; i < reminderItem.tag.length; i++) { %>
+                <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+                 <% } %>
+              <%= reminderItem.description %>
+              || <i><%= reminderItem.tag %></i>
+              || Completed:
+              <% if (reminderItem.completed == true) { %>
+                <span class="badge badge-success">True</span>
+              <% } else if (reminderItem.completed == false) { %>
+                <span class="badge badge-danger">False</span>
+              <% } %>
+              || Remind Me:
+              <%= reminderItem.date.replace("T", " ") %>
+              <a class="pull-right" href=<%= "/friend/" + reminderItem.name + "/" + reminderItem.id %>>View</a>
+            </li>
+          
+          <% }}) %>
+        </ul>
+        <% })} %>
 
+
+
+  <!-- </ul> -->
+</div>
+<% } %>
 <!-- <h1 class="frend-header">Friend's Reminders</h1> -->
-
+<br>
 <a href="/logout" class="btn btn-secondary">Logout</a>
 </div>
