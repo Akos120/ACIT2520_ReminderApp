@@ -60,8 +60,12 @@
               <% } %>
               || Remind Me:
               <%= reminderItem.date.replace("T", " ") %>
-              <a class="pull-right" href=<%= "/friend/" + reminderItem.name + "/" + reminderItem.id %>>View</a>
+              <a class="pull-right badge badge-primary" href=<%= "/friend/" + reminderItem.name + "/" + reminderItem.id %>>View</a>
+              <span class="align-middle">
+                <p><%= reminderItem.description %></p>
+              </span>
             </li>
+            
           
           <% }}) %>
         </ul>
