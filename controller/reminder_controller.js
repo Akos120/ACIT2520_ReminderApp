@@ -79,11 +79,7 @@ let remindersController = {
     let num = database[name].reminders.indexOf(searchResult)
     searchResult.title = req.body.title
     searchResult.description = req.body.description
-
     searchResult.date = req.body.date
-
-
-
     if (req.body.completed == "true") {
       searchResult.completed = true
     } else if (req.body.completed == "false") {
