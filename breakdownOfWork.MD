@@ -1,4 +1,5 @@
 ##Sprint 1 (Complete - March 22, 2021)
+
 Agnes:
 1. Created github repository
 2. Created the breakdown of work file, and pushed to repo
@@ -30,6 +31,7 @@ Also find how to work on git and git on vs
 
 
 ##Sprint 2 (Complete - March 29, 2021)
+
 Agnes:
 1. Added ability to view friend's reminders in detail
 2. Rewatched some lecture videos
@@ -58,6 +60,7 @@ Watch these to learn how to add aleart window in ejs
 
 
 ##Sprint 3 (Complete - April 6, 2021)
+
 Agnes:
 1. Worked to allow adding of friend's reminders to your list
 2. Looked up various array methods (includes(), indexOf(), find())
@@ -86,6 +89,7 @@ Watch these to complete write button event in ejs and parse button value to serv
 3. https://stackoverflow.com/questions/64406943/executing-a-function-onclick-via-ejs-template
 
 ##Sprint 4 (Complete - April 12, 2021)
+
 Agnes:
 1. Worked on fixing up the friend's reminders on your list
 2. Looked up Post method, input types, array methods, ejs formatting, bootstrap
@@ -114,6 +118,7 @@ Watch these to learn how to the weather API work
 2. https://www.youtube.com/watch?v=SXsaB9TUfkk
 
 ##Sprint 5 (Complete - April 20, 2021)
+
 Agnes:
 1. Finished adding friend's reminders functionality
 2. Made the ejs script for adding to your list of reminders dynamic
