@@ -60,22 +60,28 @@ app.get("/reminder/:id", ensureAuthenticated, reminderController.listOne);
 
 app.get("/reminder/:id/edit", ensureAuthenticated, reminderController.edit);
 
+app.post("/reminder/:id/editsub", ensureAuthenticated, reminderController.subtask);
+
+
 app.get("/friend", ensureAuthenticated, friendcontroller.Show);
 
 app.get("/friend/:name", ensureAuthenticated, friendcontroller.View);
+  
 
-app.post("/reminder/", reminderController.create);
-
-// Implement this yourself
-app.post("/reminder/update/:id", reminderController.update);
+app.post("/reminder/", ensureAuthenticated, reminderController.create);
 
 // Implement this yourself
-app.post("/reminder/delete/:id", reminderController.delete);
+app.post("/reminder/update/:id", ensureAuthenticated, reminderController.update);
 
-app.post("/friend", friendcontroller.add);
+// Implement this yourself
+app.post("/reminder/delete/:id", ensureAuthenticated, reminderController.delete);
+
+app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);
+
+app.post("/friend", ensureAuthenticated, friendcontroller.add);
 
 // To see friend's reminders in detail
-app.get("/friend/:name/:id", friendcontroller.friendRemind)
+app.get("/friend/:name/:id", ensureAuthenticated, friendcontroller.friendRemind)
 
 // adding friends reminders to your list
 app.post("/reminders", friendcontroller.addReminder)

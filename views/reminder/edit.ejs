@@ -1,5 +1,8 @@
 <div class="container">
-  <h1 class="page-header">Edit</h1>
+  <div class="row show-grid">
+    <h1 class="page-header">Edit</h1>&nbsp&nbsp
+    <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+Username%>>
+  </div>
   <form action=<%= "/reminder/update/" + reminderItem.id %> method="POST">
     <div class="form-group">
       <label for="title">Title</label>
@@ -14,12 +17,6 @@
       <label for="date">Remind me by</label>
       <input type="datetime-local" class="form-control" id="dateInput" name="date" value="<%= reminderItem.date %>">
     </div>
-
-    <div class="form-group">
-      <label for="tag">Tag</label>
-      <input type="text" name="tag" class="form-control" id="tagInput" value="<%= reminderItem.tag %>">
-    </div>
-
 
     <div class="form-group">
       <label for="completed">Completed</label>
@@ -44,6 +41,5 @@
         </label>
       </div>
     <button type="submit" class="btn btn-warning">Update</button>
-    <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </div>

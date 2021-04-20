@@ -1,13 +1,24 @@
 <div class="container">
-  <h1 class="page-header">Reminders</h1>
-
+    <div class="row show-grid">
+      <h1 class="page-header">Reminders</h1>&nbsp&nbsp
+      <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+Username%>>
+    </div>
+    <div class="row show-grid">
+      <img  src=<%="http://openweathermap.org/img/w/"+weatherdata.weather[0].icon+".png" %>>
+      <ul class="list-group" style="list-style-type:none">
+        <li > <strong><%= weatherdata.weather[0].description%></strong></li>
+        <li > <strong><%= parseInt(weatherdata.main.temp)-273%>°</strong></li>
+      </ul>
+  </div>
 <ul class="list-group">
   <% reminders.forEach(function (reminderItem) { %>
     <li class="list-group-item">
-      <strong><%= reminderItem.title %>: </strong>
-      <%= reminderItem.description %>
-      || <i><%= reminderItem.tag %></i>
-      || Completed:
+      <strong><%= reminderItem.title %> </strong>
+        <% for (i = 0; i < reminderItem.tag.length; i++) { %>
+        <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+         <% } %>
+         <%= reminderItem.description %>
+      Completed:
       <% if (reminderItem.completed == true) { %>
         <span class="badge badge-success">True</span>
       <% } else if (reminderItem.completed == false) { %>
@@ -33,6 +44,9 @@
           <% if (reminderItem.name == name) { %>
             <li class="list-group-item">
               <strong><%= reminderItem.title %>: </strong>
+              <% for (i = 0; i < reminderItem.tag.length; i++) { %>
+                <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
+                 <% } %>
               <%= reminderItem.description %>
               || <i><%= reminderItem.tag %></i>
               || Completed:
