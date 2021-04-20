@@ -10,7 +10,11 @@ let remindersController = {
         return user.id == user_id;
         });
 
-    res.render("reminder/index", { reminders: database[name].reminders, friends: currentuser.friends, friendsReminders: database[name].friendReminders});
+    res.render("reminder/index", { 
+      reminders: database[name].reminders, 
+      friendsReminders: database[name].friendReminders, 
+      friendlist: database[name].friends
+    });
   },
 
   new: (req, res) => {

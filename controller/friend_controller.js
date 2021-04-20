@@ -82,11 +82,8 @@ let friendcontroller={
       },
 
     addReminder: (req, res) => {
-        console.log('inside addReminder')
         let user = req.user.name
-        // let reminderId = req.body.reminderId
         let reminderName = req.body.reminderName
-        console.log(reminderName)
         let user_id = req.user.id;
 
         //find the current user friend list
@@ -94,14 +91,24 @@ let friendcontroller={
             return user.id == user_id;
             });
 
+        //adding friend's reminders to your database if they are not already there
         database[reminderName].reminders.forEach(reminder => {
-            database[user].friendReminders.push(reminder)
+            if (database[user].friendReminders.indexOf(reminder) == -1) {
+                reminderAddName = reminder
+                reminderAddName.name = reminderName
+                database[user].friendReminders.push(reminderAddName)
+            }
+            if (database[user].friends.indexOf(reminderName) == -1) {
+                database[user].friends.push(reminderName)
+            }
         });
 
-        console.log(database[user])
-        
-        res.render("reminder/index", { reminders: database[user].reminders, friendsReminders: database[user].friendReminders, friends: currentuser.friends, friendname: reminderName });
-        }
+        res.render("reminder/index", { 
+            reminders: database[user].reminders, 
+            friendsReminders: database[user].friendReminders, 
+            friendlist: database[user].friends 
+        });
+    }
 };
 
 

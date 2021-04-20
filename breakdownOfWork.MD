@@ -52,5 +52,11 @@ Agnes:
 
 Sprint 4 (April 12, 2021)
 Agnes:
-1. Worked on fixing up the friedd's reminders on your list
+1. Worked on fixing up the friend's reminders on your list
 2. Looked up Post method, input types, array methods, ejs formatting
+
+Sprint 5 (April 20, 2021)
+Agnes:
+1. Finished adding friend's reminders functionality
+2. Made the ejs script for adding to your list of reminders dynamic
+3. Changed aesthetics of buttons
