@@ -82,8 +82,6 @@ let remindersController = {
 
     searchResult.date = req.body.date
 
-    searchResult.tag = req.body.tag
-
 
     if (req.body.completed == "true") {
       searchResult.completed = true
