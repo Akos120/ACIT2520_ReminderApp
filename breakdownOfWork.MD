@@ -89,9 +89,6 @@ Watch these to complete write button event in ejs and parse button value to serv
 Agnes:
 1. Worked on fixing up the friend's reminders on your list
 2. Looked up Post method, input types, array methods, ejs formatting, bootstrap
-1. Finished adding friend's reminders functionality
-2. Made the ejs script for adding to your list of reminders dynamic
-3. Changed aesthetics of buttons
 
 Steven:
 1. Researched how to use bootstrap
@@ -115,4 +112,10 @@ Benny:
 Watch these to learn how to the weather API work
 1. https://www.youtube.com/watch?v=lcWfSn6-m_8
 2. https://www.youtube.com/watch?v=SXsaB9TUfkk
+
+##Sprint 5 (Complete - April 20, 2021)
+Agnes:
+1. Finished adding friend's reminders functionality
+2. Made the ejs script for adding to your list of reminders dynamic
+3. Changed aesthetics of buttons 
 
