@@ -39,7 +39,7 @@
     <% if (friendlist.length > 0) { %>
       <% friendlist.forEach(function (name) { %>
         <ul class="list-group">
-        <h2><%=name%>'s</h2>
+        <h2><%=name.toUpperCase()%>'s</h2>
         <% friendsReminders.forEach(function (reminderItem) { %>
           <% if (reminderItem.name == name) { %>
             <li class="list-group-item">
