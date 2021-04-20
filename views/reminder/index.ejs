@@ -47,8 +47,6 @@
               <% for (i = 0; i < reminderItem.tag.length; i++) { %>
                 <span class="badge badge-warning"><%=reminderItem.tag[i]%></span>
                  <% } %>
-              <%= reminderItem.description %>
-              || <i><%= reminderItem.tag %></i>
               || Completed:
               <% if (reminderItem.completed == true) { %>
                 <span class="badge badge-success">True</span>
@@ -58,6 +56,9 @@
               || Remind Me:
               <%= reminderItem.date.replace("T", " ") %>
               <a class="pull-right" href=<%= "/friend/" + reminderItem.name + "/" + reminderItem.id %>>View</a>
+              <span class="align-middle">
+                <p><%= reminderItem.description %></p>
+              </span>
             </li>
           
           <% }}) %>
