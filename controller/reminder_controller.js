@@ -82,7 +82,6 @@ let remindersController = {
 
     searchResult.date = req.body.date
 
-    searchResult.tag = req.body.tag
 
 
     if (req.body.completed == "true") {
@@ -93,7 +92,6 @@ let remindersController = {
 
     database[name].reminders[num]=searchResult
     
-
     res.redirect("/reminder/" + reminderToFind)
   },
 
@@ -139,10 +137,8 @@ let remindersController = {
         database[name].reminders[num].subtask=result
         res.redirect("/reminder/" + reminderToFind)
     }
-
   },
   
-
 
 
   tags:(req,res)=>{
