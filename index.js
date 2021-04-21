@@ -45,8 +45,6 @@ app.use((req, res, next) => {
   // let x=Object.keys(req.sessionStore.sessions)
   // console.log(x);
   // Object.keys()
-
-
   // console.log(req.sessionStore.sessions)
   next();
 });
@@ -71,10 +69,8 @@ app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);
 
 app.post("/reminder/", ensureAuthenticated, reminderController.create);
 
-// Implement this yourself
 app.post("/reminder/update/:id", ensureAuthenticated, reminderController.update);
 
-// Implement this yourself
 app.post("/reminder/delete/:id", ensureAuthenticated, reminderController.delete);
 
 app.post("/reminder/:id/tag", ensureAuthenticated, reminderController.tags);

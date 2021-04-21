@@ -12,8 +12,8 @@ let remindersController = {
     let parseweather=await weather.json()
     let name =req.user.name 
     res.render("reminder/index", { reminders: database[name].reminders,
-                                   weatherdata:parseweather,
-                                    Username:name,
+                                   weatherdata: parseweather,
+                                    Username: name,
                                     friendsReminders: database[name].friendReminders, 
                                     friendlist: database[name].friends});
   },
@@ -34,14 +34,13 @@ let remindersController = {
 
     if (searchResult != undefined) {
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show,
-                                                Tag_show:Tag_show,
-                                                Username:name });
-
+                                                Show: Show,
+                                                Tag_show: Tag_show,
+                                                Username: name });
     } else {
       res.render("reminder/index", { reminders: database[name].reminders,
-                                     weather:parseweather,
-                                     Username:name});
+                                     weather: parseweather,
+                                     Username: name});
     }
   },
 
@@ -67,7 +66,7 @@ let remindersController = {
       return reminder.id == reminderToFind;
     });
     res.render("reminder/edit", { reminderItem: searchResult,
-                                  Username:name});
+                                  Username: name});
   },
 
   update: (req, res) => {
@@ -87,7 +86,6 @@ let remindersController = {
     };
 
     database[name].reminders[num]=searchResult
-    
     res.redirect("/reminder/" + reminderToFind)
   },
 
@@ -98,14 +96,14 @@ let remindersController = {
       return reminder.id == reminderToFind;
       });
 
-      if(searchResult !== -1){
-        let result = database[name].reminders.filter(elem => elem !== searchResult)
-        database[name].reminders=result
-      }
+    if(searchResult !== -1){
+      let result = database[name].reminders.filter(elem => elem !== searchResult)
+      database[name].reminders=result
+    }
     res.redirect("/reminders");
   },
 
-  subtask:(req,res)=>{
+  subtask: (req,res) => {
     let reminderToFind = req.params.id;
     let name = req.user.name;
     let inputvalue=req.body.buttonsub
@@ -116,28 +114,26 @@ let remindersController = {
     if(inputvalue== "add"){
       let Show=false
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show,
-                                                Tag_show:Tag_show,
-                                                Username:name })
+                                                Show: Show,
+                                                Tag_show: Tag_show,
+                                                Username: name })
 
-    }else if (inputvalue == "Submit"){
+    } else if (inputvalue == "Submit") {
       database[name].reminders[num].subtask.push(req.body.subtask)
       let Show=true
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show,
-                                                Tag_show:Tag_show,
-                                                Username:name })
-    }else{
+                                                Show: Show,
+                                                Tag_show: Tag_show,
+                                                Username: name })
+    } else {
         let subtask = database[name].reminders[num].subtask[inputvalue]
         let result = database[name].reminders[num].subtask.filter(elem => elem !== subtask)
         database[name].reminders[num].subtask=result
         res.redirect("/reminder/" + reminderToFind)
     }
   },
-  
 
-
-  tags:(req,res)=>{
+  tags: (req,res) => {
     let reminderToFind = req.params.id;
     let name = req.user.name;
     let inputvalue=req.body.buttonsub
@@ -145,29 +141,28 @@ let remindersController = {
       return reminder.id == reminderToFind;
     });
     let person = database[name].reminders.indexOf(searchResult)
-    if(inputvalue== "add"){
+    
+    if (inputvalue== "add") {
       let Tag_show=false
       res.render("reminder/single-reminder", { reminderItem: searchResult,
-                                                Show:Show,
-                                                Tag_show:Tag_show,
-                                                Username:name})
-
-    }else if (inputvalue == "Submit"){
+                                                Show: Show,
+                                                Tag_show: Tag_show,
+                                                Username: name})
+    } else if (inputvalue == "Submit") {
       database[name].reminders[person].tag.push(req.body.tag)
       let Tag_show=true
       res.render("reminder/single-reminder", { reminderItem: searchResult,
                                                 Show:Show,
-                                                Tag_show:Tag_show,
-                                                Username:name})
-    }else{
-        let tag = database[name].reminders[person].tag[inputvalue]
-        let result = database[name].reminders[person].tag.filter(elem => elem !== tag)
-        database[name].reminders[person].tag=result
-        res.redirect("/reminder/" + reminderToFind)
+                                                Tag_show: Tag_show,
+                                                Username: name})
+    } else {
+      let tag = database[name].reminders[person].tag[inputvalue]
+      let result = database[name].reminders[person].tag.filter(elem => elem !== tag)
+      database[name].reminders[person].tag=result
+      res.redirect("/reminder/" + reminderToFind)
     }
   }
 };
-
 
 
 module.exports = remindersController

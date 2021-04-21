@@ -2,15 +2,14 @@ let database = require("../database").Database;
 let account = require("../database").Account;
 const fetch = require("node-fetch")
 
-let checkfriend=(searched,current)=>{
+let checkfriend = (searched,current) => {
     let result = current.friends.find(function (user) {
         return user.id == searched.id;
         });
     return result
 }
 
-
-let friendcontroller={
+let friendcontroller = {
     Show: async (req,res)=>{
         // The picture in unsplash is too big we choose another fake api as the suer profile pictures
 
@@ -28,11 +27,9 @@ let friendcontroller={
                                      alluser:account,
                                      listener:"filter()",
                                      Username:name})
-
-
     },
 
-    add:(req,res)=>{
+    add: (req,res) => {
         // send the email to the client
         let email = req.body.useremail
         // send the current user id
@@ -78,7 +75,6 @@ let friendcontroller={
                                          alluser:account,
                                          listener:"filter()",
                                          Username:name})
-
         }
     },
 
@@ -114,11 +110,6 @@ let friendcontroller={
         let weatherkey="f64eb826175eddf4f4465398309206bb"
         let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Vancouver&appid=${weatherkey}`)
         let parseweather=await weather.json()
-
-        //find the current user friend list
-        let currentuser = account.find(function (user) {
-            return user.id == user_id;
-            });
 
         //adding friend's reminders to your database if they are not already there
         database[reminderName].reminders.forEach(reminder => {
