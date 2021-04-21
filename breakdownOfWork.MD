@@ -123,6 +123,7 @@ Agnes:
 1. Finished adding friend's reminders functionality
 2. Made the ejs script for adding to your list of reminders dynamic
 3. Changed aesthetics of buttons 
+4. Tested and debugged with group
 
 Shaniah:
 1. Made some final changes to tags 
