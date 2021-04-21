@@ -119,6 +119,10 @@ Watch these to learn how to the weather API work
 
 ##Sprint 5 (Complete - April 20, 2021)
 
+Steven:
+1. Helped debug final code
+2. Added Subtask section of README file
+
 Agnes:
 1. Finished adding friend's reminders functionality
 2. Made the ejs script for adding to your list of reminders dynamic
