@@ -19,7 +19,7 @@
                 <li  style="display:none" ><%=alluser[i].email%></li>
             <% } %>
             </ul>
-            <input onkeyup='<%=listener%>' type="text" name="useremail" class="form-control" id="userInput" placeholder="Type email">
+            <input onkeyup=<%= listener %> type="text" name="useremail" class="form-control" id="userInput" placeholder="Type email">
             <script>
                 const filter=()=>{
                     const filtercontent=document.querySelector("#userInput").value
