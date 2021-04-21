@@ -128,3 +128,5 @@ Shaniah:
 1. Made some final changes to tags 
 2. Tested functionality and debugging as a group over Discord
 
+Benny:
+1. Fixed bugs in the index.js and single-reminder.js. Now the tags and description can be shown on the home page as well
