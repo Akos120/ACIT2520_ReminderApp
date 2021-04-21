@@ -1,4 +1,4 @@
-##Sprint 1 (Complete - March 22, 2021)
+## Sprint 1 (Complete - March 22, 2021)
 
 Agnes:
 1. Created github repository
@@ -30,7 +30,7 @@ Also find how to work on git and git on vs
 2. https://www.youtube.com/watch?v=F2DBSH2VoHQ
 
 
-##Sprint 2 (Complete - March 29, 2021)
+## Sprint 2 (Complete - March 29, 2021)
 
 Agnes:
 1. Added ability to view friend's reminders in detail
@@ -59,7 +59,7 @@ Watch these to learn how to add aleart window in ejs
 3. https://stackoverflow.com/questions/58806892/show-alert-on-response-render-in-ejs-template-if-statement-not-working-in-ejs
 
 
-##Sprint 3 (Complete - April 6, 2021)
+## Sprint 3 (Complete - April 6, 2021)
 
 Agnes:
 1. Worked to allow adding of friend's reminders to your list
@@ -88,7 +88,7 @@ Watch these to complete write button event in ejs and parse button value to serv
 2. https://stackoverflow.com/questions/38595247/passing-a-function-into-an-ejs-template-for-use-in-an-onclick-event
 3. https://stackoverflow.com/questions/64406943/executing-a-function-onclick-via-ejs-template
 
-##Sprint 4 (Complete - April 12, 2021)
+## Sprint 4 (Complete - April 12, 2021)
 
 Agnes:
 1. Worked on fixing up the friend's reminders on your list
@@ -117,7 +117,7 @@ Watch these to learn how to the weather API work
 1. https://www.youtube.com/watch?v=lcWfSn6-m_8
 2. https://www.youtube.com/watch?v=SXsaB9TUfkk
 
-##Sprint 5 (Complete - April 20, 2021)
+## Sprint 5 (Complete - April 20, 2021)
 
 Agnes:
 1. Finished adding friend's reminders functionality
