@@ -36,15 +36,15 @@ You also can copy your friends remiders to your remiders as well. Thoes reminder
 ## Tags
 You can use tags to highlight the keywords for each of your reminders! 
 
-![image](./pic/tags1.jpg)
+![image](./pic/tags1.JPG)
 
 These will show up on your friends reminders' list on your homepage so you can see their tags too. 
 
-![image](./pic/tags2.jpg)
+![image](./pic/tags2.JPG)
 
 Additionally, you can delete and add tags when you click on any of your own reminders. 
 
-![image](./pic/tags3.jpg)
+![image](./pic/tags3.JPG)
 
 Your tags need be typed in as one word per tag entry. They will show up within a yellow rectangle with rounded edges. 
 
