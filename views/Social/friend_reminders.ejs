@@ -3,7 +3,7 @@
     <h1 class="page-header"><%=friendname.toUpperCase()%>'s Reminders</h1>&nbsp&nbsp
     <img style="border-radius:50%" width="50" height="50" src=<%="https://ui-avatars.com/api/?background=random&name="+friendname%>>
   </div>
-  
+
   <ul class="list-group">
     <% reminders.forEach(function (reminderItem) { %>
       <li class="list-group-item" style="padding-bottom: 0.25rem;">
@@ -15,25 +15,16 @@
         <% } else if (reminderItem.completed == false) { %>
           <span class="badge badge-danger">False</span>
         <% } %>
-
         || Remind By:
         <%= reminderItem.date.replace("T", " ") %>
-        
-
-        
         <a class="pull-right" href=<%= "/friend/" + friendname + "/" + reminderItem.id %>>View</a>
-
-        
       </li>
-      <!-- <button type="submit" class="btn btn-warning" onclick=<&=addReminder %>>Add to Your List</button> -->
     <% }) %>
+
     <form action="/reminders" method="POST">
       <input type="hidden" name="reminderName" value=<%= friendname %> >
       <br>
       <button type="submit" class="btn btn-outline-success">Add to Your List</button>
     </form>
   </ul>
-  <!-- <a href="/logout" class="btn btn-secondary">Logout</a> -->
-  <!-- You should add copy buttion here -->
-  <!-- You may also need to stop user copy twice and give them error message -->
-  </div>
+</div>
